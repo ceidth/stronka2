@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import ForumTopic from '../components/ForumTopic'
+import ForumTopicCard from '../components/ForumTopicCard'
 
 // placeHolder Posts
 const forumTopics = [
@@ -25,7 +25,7 @@ const forum = () => {
         </Head>
         <div className='lg:col-span-8 cols-span-1'>
           {forumTopics.map((topic) => (
-            <ForumTopic topic={topic}/>
+            <ForumTopicCard topic={topic}/>
           ))}
         </div>
     </div>
