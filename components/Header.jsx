@@ -20,6 +20,13 @@ const Header = () => {
                 <span className="cursor-pointer font-bold text-4xl text-orange-500">Deeper</span>
               </Link>
             </div>
+            <div className="md:float-left">
+              <Link href='/forum'>
+                <span className="md:float-right mt-2 align-middle text-stone-200 ml-6 font-semibold cursor-pointer">
+                  FORUM
+                </span>
+              </Link>
+            </div>
             <div className="hidden md:float-left md:contents">
               {categories.map((category, index) => (
                 <Link key={index} href={`/category/${category.slug}`}><span className="md:float-right mt-2 align-middle text-stone-200 ml-6 font-semibold cursor-pointer">{category.name}</span></Link>
