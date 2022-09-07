@@ -5,15 +5,18 @@ import ForumTopicCard from '../components/ForumTopicCard'
 const forumTopics = [
   {
     title: "How to beat the game?",
-    author: "Wojtek" 
+    author: "Wojtek",
+    dateposted: "25/04/2022"
   },
   {
     title: "Post 2 Title",
-    author: "Autoru Postu 2"
+    author: "Autor Postu 2",
+    dateposted: "11/05/2022"
   },
   {
     title: "3 Post Title",
-    author: "Autoru Postu 3"
+    author: "Autor Postu 3",
+    dateposted: "11/06/2022"
   }
 ]
 

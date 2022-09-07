@@ -8,7 +8,10 @@ const FourmTopic = ({ topic }) => {
             {topic.title}
           </Link>
       </h1>
-      <div>{ topic.author }</div>
+      <div className='grid grid-cols-2 lg:grid-cols-2'>
+        <div>Author: { topic.author }</div>
+        <div className='text-right'>Date posted: { topic.dateposted }</div>
+      </div>
     </div>
   )
 }
