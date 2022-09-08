@@ -4,7 +4,7 @@ import parse from 'html-react-parser'
 
 import { getForumComments } from '../services'
 
-const TopicComments = ({slug}) => {
+const TopicComments = ({ slug }) => {
   const [comments, setComments] = useState([])
 
   useEffect(() => {

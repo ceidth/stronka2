@@ -19,9 +19,26 @@ export const getForumTopics = async () => {
   return result.forumTopics
 }
 
+export const getForumTopicDetails = async (slug) => {
+  const query = gql`
+    query GetForumTopicDetails($slug: String = "$slug") {
+      forumTopic(where: {slug: $slug}) {
+        author
+        content
+        createdAt
+        topicName
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query, { slug })
+
+  return result.forumTopic
+}
+
 export const getForumComments = async (slug) => {
   const query = gql`
-    query MyQuery($slug: String = "$slug") {
+    query GetForumComments($slug: String = "$slug") {
       forumComments(where: {forumTopic: {slug: $slug}}) {
         name
         comment
