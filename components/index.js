@@ -10,3 +10,5 @@ export {default as CommentsForm} from './CommentsForm';
 export {default as FeaturedPostCard} from './FeaturedPostCard'
 export {default as Loader} from './Loader'
 export {default as ForumTopicCard} from './ForumTopicCard'
+export {default as ForumTopicDetails} from './ForumTopicDetails'
+export {default as TopicComments} from './TopicComments'

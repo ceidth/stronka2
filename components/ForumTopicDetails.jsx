@@ -12,6 +12,10 @@ const ForumTopicDetails = ({ post }) => {
                 />
             </div> */}
             <div className='px-4 lg:px-0'>
+                <h1 className='mb-8 text-3xl font-semibold'>
+                    {/* {post.title} */}
+                    Tytuł postu
+                </h1>
                 <div className='flex items-center mb-8 w-full'>
                     <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
                         {/* <img  
@@ -36,10 +40,6 @@ const ForumTopicDetails = ({ post }) => {
                         </span>      
                     </div>
                 </div>
-                <h1 className='mb-8 text-3xl font-semibold'>
-                    {/* {post.title} */}
-                    Tytuł postu
-                </h1>
                 {/* {post.content.raw.children.map((typeObj, index) => {
                     const children = typeObj.children.map((item, itemIndex) => 
                     getContentFragment(itemIndex, item.text, item))
