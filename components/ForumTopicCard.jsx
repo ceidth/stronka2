@@ -11,7 +11,7 @@ const FourmTopicCard = ({ topic }) => {
       </h1>
       <div className='grid grid-cols-2 lg:grid-cols-2'>
         <div className="font-medium text-gray-700 text-left">
-          Author: { topic.author }
+          Author: { topic.name }
         </div>
         <div className="font-medium text-gray-700 text-right">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

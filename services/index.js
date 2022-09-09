@@ -8,7 +8,7 @@ export const getForumTopics = async () => {
       forumTopics {
         topicName
         createdAt
-        author
+        name
         slug
       }
     }
@@ -23,7 +23,7 @@ export const getForumTopicDetails = async (slug) => {
   const query = gql`
     query GetForumTopicDetails($slug: String = "$slug") {
       forumTopic(where: {slug: $slug}) {
-        author
+        name
         content
         createdAt
         topicName
@@ -278,6 +278,18 @@ export const submitComment = async (obj, isForum) => {
 
   return result.json();
 };
+
+export const submitTopic = async (obj) => {
+  const result = await fetch('/api/topics', {
+    method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+  })
+
+  return result.json()
+}
 
 export const getComments = async (slug) => {
   const query = gql`

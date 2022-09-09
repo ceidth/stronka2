@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 
-import { submitComment } from '../services'
+import { submitTopic } from '../services'
 
-const CommentsForm = ({slug, isForum}) => {
+const NewTopicForm = () => {
   const [error, setError] = useState(false)
   const [localStorage, setLocalStorage] = useState(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
@@ -18,7 +18,7 @@ const CommentsForm = ({slug, isForum}) => {
   }, [])
   
 
-  const handleCommentSubmission = () => {
+  const handleTopicSubmission = () => {
     setError(false)
 
     const {value: topicName} = topicNameEl.current
@@ -32,7 +32,8 @@ const CommentsForm = ({slug, isForum}) => {
       return;
     }
 
-    const commentObj = {name, email, topicName, content, slug}
+    const slug = topicName.replace(/\s+/g, '-').toLowerCase()
+    const commentObj = {name, email, slug, topicName, content}
 
     if(storeData) {
       window.localStorage.setItem('name', name)
@@ -43,7 +44,7 @@ const CommentsForm = ({slug, isForum}) => {
     }
 
     // Funkcja do podmiany
-    submitComment(commentObj, isForum)
+    submitTopic(commentObj)
     .then((res) => {
       setShowSuccessMessage(true)
         setTimeout(() => {
@@ -107,7 +108,7 @@ const CommentsForm = ({slug, isForum}) => {
       <div className="mt-8">
         <button 
           type="button" 
-          onClick={handleCommentSubmission} 
+          onClick={handleTopicSubmission} 
           className="transition duration-500 ease hover:bg-stone-600 inline-block bg-orange-400 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
             Create
           </button>
@@ -117,4 +118,4 @@ const CommentsForm = ({slug, isForum}) => {
   )
 }
 
-export default CommentsForm
+export default NewTopicForm
