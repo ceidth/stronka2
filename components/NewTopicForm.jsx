@@ -33,6 +33,10 @@ const NewTopicForm = () => {
     }
 
     const slug = topicName.replace(/\s+/g, '-').toLowerCase()
+    if (slug.endsWith("-")) {
+      setError(true)
+      return;
+    }
     const commentObj = {name, email, slug, topicName, content}
 
     if(storeData) {
@@ -104,7 +108,7 @@ const NewTopicForm = () => {
           <label className="text-stone-500 cursor-pointer ml-2" htmlFor="storeData"> Save my name and email in this browser for the next time.</label>
         </div>
       </div>
-      {error && <p className="text-xs text-red-500">All fields are mandatory</p>}
+      {error && <p className="text-xs text-red-500">All fields are mandatory and title mustn't end with dash neither whitespace.</p>}
       <div className="mt-8">
         <button 
           type="button" 
