@@ -3,13 +3,13 @@ import moment from 'moment'
 import { getForumTopicDetails } from '../services'
 
 
-const ForumTopicDetails = ({ slug }) => {
-    const [topicDetails, setTopicDetails] = useState([])
+const ForumTopicDetails = ({ topicDetails }) => {
+    // const [topicDetails, setTopicDetails] = useState([])
 
-    useEffect(() => {
-        getForumTopicDetails(slug)
-        .then((result) => setTopicDetails(result))
-    }, [])
+    // useEffect(() => {
+    //     getForumTopicDetails(slug)
+    //     .then((result) => setTopicDetails(result))
+    // }, [])
 
 
     return (
