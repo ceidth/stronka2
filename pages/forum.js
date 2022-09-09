@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import ForumTopicCard from '../components/ForumTopicCard'
 import Link from 'next/link'
 import { getForumTopics } from '../services'
+import { NewTopicForm, ForumTopicCard } from '../components'
 
 const forum = ({topics}) => {
   return (
@@ -13,7 +13,9 @@ const forum = ({topics}) => {
           {topics.map((topic) => (
             <ForumTopicCard topic={topic}/>
           ))}
+          <NewTopicForm />
         </div>
+
     </div>
   )
 }
