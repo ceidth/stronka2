@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 
 import { submitComment } from '../services'
 
-const CommentsForm = ({slug}) => {
+const CommentsForm = ({slug, isForum}) => {
   const [error, setError] = useState(false)
   const [localStorage, setLocalStorage] = useState(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
@@ -40,7 +40,7 @@ const CommentsForm = ({slug}) => {
       window.localStorage.removeItem('email', email)
     }
 
-    submitComment(commentObj)
+    submitComment(commentObj, isForum)
     .then((res) => {
       setShowSuccessMessage(true)
         setTimeout(() => {

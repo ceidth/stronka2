@@ -11,13 +11,13 @@ const ForumPost = () => {
     }
 
     const { slug } = router.query
-
+    
     return (
         <div className='container mx-auto px-10 mb-8'>
             <div className='col-span-1 lg:col-span-8'>
                 <ForumTopicDetails slug={ slug } />
-                <TopicComments slug={ slug }/>
-                <CommentsForm slug={ slug }/>
+                <TopicComments slug={ slug } />
+                <CommentsForm slug={ slug } isForum={ true } />
             </div>
         </div>
     )

@@ -256,14 +256,25 @@ export const getFeaturedPosts = async () => {
   return result.posts;
 };
 
-export const submitComment = async (obj) => {
-  const result = await fetch('/api/comments', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(obj),
-  });
+export const submitComment = async (obj, isForum) => {
+  const result = null
+  if(isForum) {
+    result = await fetch('/api/forumComments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
+  } else {
+    result = await fetch('/api/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
+  }
 
   return result.json();
 };
