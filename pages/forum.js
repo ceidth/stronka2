@@ -7,7 +7,7 @@ const forum = ({topics}) => {
   return (
     <div className='container mx-auto px-10 mb-8'>
         <Head>
-            <title>About</title>
+            <title>Forum</title>
         </Head>
         <div className='lg:col-span-8 cols-span-1'>
           {topics.map((topic) => (
